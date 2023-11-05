@@ -72,25 +72,11 @@ config.vm.network :forwarded_port, guest: 5001, host: 5001
   <span id="user_id" data-id="209955"></span>
 
   <div class="panel-heading panel-heading-actions">
-    <h3 class="panel-title">
-      0. Last clone!
-    </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
+ 
 
   <div class="panel-body">
     <span id="user_id" data-id="209955"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>A new codebase again? Yes!</p>
-
+A new codebase again? Yes!
 <p>For this project you will fork this <a href="/rltoken/18CpThAKqBP5uviO1DSSGw" title="codebase" target="_blank">codebase</a>:</p>
 
 <ul>
