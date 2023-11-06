@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Graham S. Paul (place.py)
-objects that handle all default RestFul API actions for Places """
+""" objects that handle all default RestFul API actions for Places """
 from models.state import State
 from models.city import City
 from models.place import Place
@@ -17,7 +16,7 @@ from flasgger.utils import swag_from
 @swag_from('documentation/place/get_places.yml', methods=['GET'])
 def get_places(city_id):
     """
-    Gets back list of all Place objects of a City
+    Retrieves the list of all Place objects of a City
     """
     city = storage.get(City, city_id)
 
@@ -33,7 +32,7 @@ def get_places(city_id):
 @swag_from('documentation/place/get_place.yml', methods=['GET'])
 def get_place(place_id):
     """
-    Gets back Place object
+    Retrieves a Place object
     """
     place = storage.get(Place, place_id)
     if not place:
@@ -47,7 +46,7 @@ def get_place(place_id):
 @swag_from('documentation/place/delete_place.yml', methods=['DELETE'])
 def delete_place(place_id):
     """
-    Removes Place Object
+    Deletes a Place Object
     """
 
     place = storage.get(Place, place_id)
@@ -66,7 +65,7 @@ def delete_place(place_id):
 @swag_from('documentation/place/post_place.yml', methods=['POST'])
 def post_place(city_id):
     """
-    Developes Place
+    Creates a Place
     """
     city = storage.get(City, city_id)
 
@@ -98,7 +97,7 @@ def post_place(city_id):
 @swag_from('documentation/place/put_place.yml', methods=['PUT'])
 def put_place(place_id):
     """
-    Modernize Place
+    Updates a Place
     """
     place = storage.get(Place, place_id)
 
@@ -122,7 +121,7 @@ def put_place(place_id):
 @swag_from('documentation/place/post_search.yml', methods=['POST'])
 def places_search():
     """
-    Gets back all Place objects depending of the JSON in the body
+    Retrieves all Place objects depending of the JSON in the body
     of the request
     """
 

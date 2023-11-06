@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Graham S. Paul (index.py)
-Index """
+""" Index """
 from models.amenity import Amenity
 from models.city import City
 from models.place import Place
@@ -20,7 +19,7 @@ def status():
 
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def number_objects():
-    """ Gets back number of each objects by type """
+    """ Retrieves the number of each objects by type """
     classes = [Amenity, City, Place, Review, State, User]
     names = ["amenities", "cities", "places", "reviews", "states", "users"]
 

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Graham S. Paul (state.py)
-objects that handle all default RestFul API actions for States """
+""" objects that handle all default RestFul API actions for States """
 from models.state import State
 from models import storage
 from api.v1.views import app_views
@@ -12,7 +11,7 @@ from flasgger.utils import swag_from
 @swag_from('documentation/state/get_state.yml', methods=['GET'])
 def get_states():
     """
-    Gets back list of all State objects
+    Retrieves the list of all State objects
     """
     all_states = storage.all(State).values()
     list_states = []
@@ -24,7 +23,7 @@ def get_states():
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/state/get_id_state.yml', methods=['get'])
 def get_state(state_id):
-    """ Gets back specific State """
+    """ Retrieves a specific State """
     state = storage.get(State, state_id)
     if not state:
         abort(404)
@@ -37,7 +36,7 @@ def get_state(state_id):
 @swag_from('documentation/state/delete_state.yml', methods=['DELETE'])
 def delete_state(state_id):
     """
-    Removes State Object
+    Deletes a State Object
     """
 
     state = storage.get(State, state_id)
@@ -55,7 +54,7 @@ def delete_state(state_id):
 @swag_from('documentation/state/post_state.yml', methods=['POST'])
 def post_state():
     """
-    Developes State
+    Creates a State
     """
     if not request.get_json():
         abort(400, description="Not a JSON")
@@ -73,7 +72,7 @@ def post_state():
 @swag_from('documentation/state/put_state.yml', methods=['PUT'])
 def put_state(state_id):
     """
-    MOdernizes State
+    Updates a State
     """
     state = storage.get(State, state_id)
 
